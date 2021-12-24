@@ -1,0 +1,10 @@
+<h1>This is where it starts</h1>
+<% @posts.each do |post| %>
+    <% if user_signed_in? %>
+        <strong><%= post.user.name %></strong><br />
+        <small>@<%= post.user.username %></small><br />
+        <p><%= post.post %></p>
+    <% else %>
+        <p><%= post.post %></p>
+    <% end %>
+<% end %>
